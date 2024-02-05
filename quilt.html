@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+            // Creating divs
+		    for (i = 0; i < 100; i++) {
+		        var createDivs = document.createElement("div");
+		        document.body.appendChild(createDivs);
+		    }
+	        
+	        // Getting # of divs created
+	        var numberOfDivs = document.getElementsByTagName("div")
+		    
+		    // Creating addEventListener
+		    for (var i = 0; numberOfDivs.length; i++) {
+		        numberOfDivs[i].addEventListener("mouseover", paint);
+		    }
+		    
+		    // Adding random (but not random) colors
+		    function paint() {
+		        var colorPaint = Math.floor(Math.random() * 4);
+		        if (colorPaint == 0) {
+		            this.style.backgroundColor = "Chocolate";
+		        }
+		        
+		        if (colorPaint == 1) {
+		            this.style.backgroundColor = "Crimson";
+		        }
+		        
+		        if (colorPaint == 2) {
+		            this.style.backgroundColor = "DarkMagenta";
+		        }
+		        
+		        if (colorPaint == 3) {
+		            this.style.backgroundColor = "DeepSkyBlue";
+		        }
+		    }
+		</script>
+	</body>
+</html>
