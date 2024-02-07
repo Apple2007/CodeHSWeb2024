@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<style>
+    	    #textbox{
+                    margin: 10px;
+                    border: 1px solid black;
+                    height: 200px;
+                }
+            #keyboard{
+                    text-align: center;
+                }
+        </style>
+	</head>
+    <body>
+        <div id = 'keyboard'>
+        </div>
+        
+        <div id = 'textbox'>
+        </div>
+    </body>
+    
+    <script>
+        var alpha = ['q','w','e','r','t','y','u','i','o','p','a','s',
+            'd','f','g','h','j','k','l',';','\'',
+            'z','x','c','v','b','n','m', ',','.'];
+            
+        function makeKeyboard() {
+            var theKeyboard = document.getElementById("keyboard");
+            
+            for (i = 0; i < 10; i++) {
+                makeButton(alpha[i]);
+            }
+            
+            theKeyboard.appendChild(document.createElement("br"));
+            
+            for (i = 10; i < 20; i++) {
+                makeButton(alpha[i]);
+            }
+            
+            theKeyboard.appendChild(document.createElement("br"));
+            
+            for (i = 20; i < 30; i++) {
+                makeButton(alpha[i]);
+            }
+            
+            theKeyboard.appendChild(document.createElement("br"));
+            
+            makeButton(" ")
+
+        }  
+        
+        makeKeyboard()
+            
+        function makeButton(letterChosen) {
+            var newLetter = document.createElement("button");
+            
+            var theKeyboard = document.getElementById("keyboard");
+            
+            if (letterChosen == " ") {
+                newLetter.innerHTML = "Space"
+            } else {
+                newLetter.innerHTML = letterChosen;
+            }
+            
+            theKeyboard.appendChild(newLetter);
+            
+            var numberOfButtons = document.getElementsByTagName("button");
+            
+            for(var i = 0; i < numberOfButtons.length; i++) {
+		        numberOfButtons[i].addEventListener("click", makeText);
+		    }
+        }
+		
+        function makeText() {
+            var letterPressed = this.innerHTML;
+            var theTextbox = document.getElementById("textbox");
+            
+            if (letterPressed == "Space") {
+                theTextbox.append(" ")
+            } else {
+                theTextbox.append(letterPressed);
+            }
+            
+        }
+    </script>
+</html>
