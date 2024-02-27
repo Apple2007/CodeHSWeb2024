@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    height: 75vh;
+    gap: 25px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-self: center;
+}
+
+[id ^="box"] {
+    width: 140px;
+    height: 140px;
+    border: 2px solid black;
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Calibri, serif;
+}
+
+#box1 {
+    flex-grow: 1;
+    background-color: #86cecb;
+}
+
+#box2 {
+    flex-grow: 5;
+    background-color: #137a7f;
+}
+
+#box3 {
+    flex-grow: 1;
+    background-color: #bec8d1;
+}
+
+h1 {
+    font-family: "Comic Sans MS", serif;
+    text-align: center;
+}
